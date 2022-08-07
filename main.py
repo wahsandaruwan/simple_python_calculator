@@ -6,7 +6,6 @@ import sys
 num1 : float = 0
 num2 : float = 0
 
-
 # -----Main functions-----
 def init():
     """
@@ -58,7 +57,7 @@ def choose_operations(user_input : str):
             elif(user_input == "^"):
                 get_numbers()
                 power()
-            elif(user_input == "%")::
+            elif(user_input == "%"):
                 get_numbers()
                 remainder()
             else:
@@ -88,6 +87,7 @@ def add():
         print("Enter second number!")
     else:
         print(float(num1) + float(num2))
+        init()
 
 
 def subtract():
@@ -101,35 +101,63 @@ def subtract():
         print("Enter second number!")
     else:
         print(float(num1) - float(num2))
+        init()
 
 
 def multiply():
     """
     This function provides the multiplication of 2 numbers.
     """ 
-    print(float(num1) * float(num2))
+    
+    if(num1 == 0):
+        print("Enter first number!")
+    elif(num2 == 0):
+        print("Enter second number!")
+    else:
+        print(float(num1) * float(num2))
+        init()
 
 
 def divide():
     """
     This function provides the division of 2 numbers.
     """ 
-    print(float(num1) / float(num2))
+
+    if(num1 == 0):
+        print("Enter first number!")
+    elif(num2 == 0):
+        print("Enter second number!")
+    else:
+        print(float(num1) / float(num2))
+        init()
 
 
 def power():
     """
     This function provides the power of 2 numbers.
     """ 
-    print(float(num1) ** float(num2))
+
+    if(num1 == 0):
+        print("Enter first number!")
+    elif(num2 == 0):
+        print("Enter second number!")
+    else:
+        print(float(num1) ** float(num2))
+        init()
 
 
 def remainder():
     """
     This function provides the remainder of 2 numbers.
     """ 
-    print(float(num1) % float(num2))
 
+    if(num1 == 0):
+        print("Enter first number!")
+    elif(num2 == 0):
+        print("Enter second number!")
+    else:
+        print(float(num1) % float(num2))
+        init()
 
 
 if __name__ == "__main__":

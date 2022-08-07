@@ -6,6 +6,12 @@ import sys
 num1 : float = 0
 num2 : float = 0
 
+
+print("\n----------------------------------------")
+print("Calculator Program")
+print("----------------------------------------\n")
+
+
 # -----Main functions-----
 def init():
     """
@@ -40,6 +46,7 @@ def choose_operations(user_input : str):
         sys.exit()
     else:
         if(user_input[-1] == "$"):
+            print("\n----------------------------------------\n")
             init()
         else:
             if(user_input == "+"):
@@ -61,7 +68,9 @@ def choose_operations(user_input : str):
                 get_numbers()
                 remainder()
             else:
-                print("Unrecognized operation!")
+                print("\nUnrecognized operation!\n")
+                print("----------------------------------------\n")
+                init()
 
 
 def get_numbers():
@@ -71,8 +80,8 @@ def get_numbers():
 
     global num1, num2
 
-    num1 = input("Enter first number : ")
-    num2 = input("Enter second number : ")
+    num1 = input("\nEnter first number : ")
+    num2 = input("\nEnter second number : ")
 
 
 # -----Operator functions-----
@@ -81,13 +90,15 @@ def add():
     This function provides the additon of 2 numbers.
     """ 
 
-    if(num1 == 0):
-        print("Enter first number!")
-    elif(num2 == 0):
-        print("Enter second number!")
-    else:
-        print(float(num1) + float(num2))
+    try:
+        print(f"\n{float(num1) + float(num2)}\n")
+        print("----------------------------------------\n")
         init()
+    except ValueError:
+        print("\nPlease enter only numbers!")
+        get_numbers()
+        add()
+        
 
 
 def subtract():
@@ -95,13 +106,14 @@ def subtract():
     This function provides the subtraction of 2 numbers.
     """ 
 
-    if(num1 == 0):
-        print("Enter first number!")
-    elif(num2 == 0):
-        print("Enter second number!")
-    else:
-        print(float(num1) - float(num2))
+    try:
+        print(f"\n{float(num1) - float(num2)}\n")
+        print("----------------------------------------\n")
         init()
+    except ValueError:
+        print("\nPlease enter only numbers!")
+        get_numbers()
+        subtract()
 
 
 def multiply():
@@ -109,13 +121,14 @@ def multiply():
     This function provides the multiplication of 2 numbers.
     """ 
     
-    if(num1 == 0):
-        print("Enter first number!")
-    elif(num2 == 0):
-        print("Enter second number!")
-    else:
-        print(float(num1) * float(num2))
+    try:
+        print(f"\n{float(num1) * float(num2)}\n")
+        print("----------------------------------------\n")
         init()
+    except ValueError:
+        print("\nPlease enter only numbers!")
+        get_numbers()
+        multiply()
 
 
 def divide():
@@ -123,13 +136,14 @@ def divide():
     This function provides the division of 2 numbers.
     """ 
 
-    if(num1 == 0):
-        print("Enter first number!")
-    elif(num2 == 0):
-        print("Enter second number!")
-    else:
-        print(float(num1) / float(num2))
+    try:
+        print(f"\n{float(num1) / float(num2)}\n")
+        print("----------------------------------------\n")
         init()
+    except ValueError:
+        print("\nPlease enter only numbers!")
+        get_numbers()
+        divide()
 
 
 def power():
@@ -137,13 +151,14 @@ def power():
     This function provides the power of 2 numbers.
     """ 
 
-    if(num1 == 0):
-        print("Enter first number!")
-    elif(num2 == 0):
-        print("Enter second number!")
-    else:
-        print(float(num1) ** float(num2))
+    try:
+        print(f"\n{float(num1) ** float(num2)}\n")
+        print("----------------------------------------\n")
         init()
+    except ValueError:
+        print("\nPlease enter only numbers!")
+        get_numbers()
+        power()
 
 
 def remainder():
@@ -151,13 +166,14 @@ def remainder():
     This function provides the remainder of 2 numbers.
     """ 
 
-    if(num1 == 0):
-        print("Enter first number!")
-    elif(num2 == 0):
-        print("Enter second number!")
-    else:
-        print(float(num1) % float(num2))
+    try:
+        print(f"\n{float(num1) % float(num2)}\n")
+        print("----------------------------------------\n")
         init()
+    except ValueError:
+        print("\nPlease enter only numbers!")
+        get_numbers()
+        remainder()
 
 
 if __name__ == "__main__":
